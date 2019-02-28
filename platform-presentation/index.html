@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Piran Platform</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>Piran Platform</h1>
+            <sub>By Isa Hekmatizadeh</sub>
+        </section>
+        <section>
+            <h1>The Goal</h1>
+            <p>Piran Platform is to create applications with these characteristics:</p>
+            <ul>
+                <li class="fragment fade-up">Easy to develop</li>
+                <li class="fragment fade-up">Scalable</li>
+                <li class="fragment fade-up">Highly customizable:<br>
+                    <small>customization should be developed Easily and Fast while adopting
+                        dynamically
+                    </small>
+                </li>
+                <li class="fragment fade-up">Fault Tolerant:<br>
+                    <small>no single point of failure</small>
+                </li>
+                <li class="fragment fade-up">Easy to maintain</li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h2>Architectural Overview</h2>
+                <img src="image/ArchitectureOverview.png"/>
+            </section>
+            <section>
+                <h2>How components find and connect to each other?</h2>
+                <ul>
+                    <li class="fragment fade-down"><a href="https://github.com/piran-framework/geev/">Geev
+                    </a>: node discovery by <i>PIRAN/RBND protocol</i></li>
+                    <li class="fragment fade-down">ZeroMQ: OpenSource socket level point-to-point
+                        queueing<br>
+                        <small>used by: CERN, Microsoft, Spotify, Samsung ...</small>
+                    </li>
+                    <li class="fragment fade-down">Piran Custom Protocols: PIRAN/DASTOOR,
+                        PIRAN/SAFIR-DARBAAN
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2><a href="https://github.com/piran-framework/darbaan/">Darbaan</a></h2>
+            <sub>Gateway library</sub>
+            <div style="display: flex;justify-content: space-around; align-items: center">
+                <div>
+                    <ul>
+                        <li class="fragment fade-down">Dynamic service discovery</li>
+                        <li class="fragment fade-down">Load balancing</li>
+                        <li class="fragment fade-down">Connect to Safir nodes by PIRAN/SAFIR-DARBAAN
+                            protocol
+                        </li>
+                        <li class="fragment fade-down">Handling Function permissions</li>
+                        <li class="fragment fade-down">Allow channels to focus on their business
+                            needs
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="image/darbaan.png">
+                </div>
+            </div>
+        </section>
+        <section>
+            <section>
+                <h2><a href="https://github.com/piran-framework/safir/">Safir</a></h2>
+                <sub>Service Container</sub>
+                <div style="display: flex;justify-content: space-around; align-items: center;
+                flex-direction: column">
+                    <p style="font-size: large">By the help of <a
+                            href="https://github.com/piran-framework/ganjex/">Ganjex(passive
+                        dynamic container)</a> Safir serve
+                        frequently changing services. Safir connect to Darbaan nodes by
+                        PIRAN/SAFIR-DARBAAN protocol and route requests to their services</p>
+                    <img src="image/safir.png" style="height: 40%">
+                </div>
+            </section>
+            <section>
+                <h3>Infrastructure Services</h3>
+                <p>Infrastructure services which will be provided to services by Safir</p>
+                <ul>
+                    <li class="fragment fade-down">Data Access service</li>
+                    <li class="fragment fade-down">Integration service</li>
+                    <li class="fragment fade-down">Common Utilities</li>
+                    <li class="fragment fade-down">Base Data service</li>
+                    <li class="fragment fade-down">Data Permissions service</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2><a href="https://github.com/piran-framework/dastoor">Dastoor
+                </a></h2>
+                <sub>Monitoring and Management Dashboard</sub>
+                <p>All Nodes connect to Dastoor by PIRAN/DASTOOR protocol</p>
+                <img src="image/dastoor.png">
+            </section>
+            <section>
+                <h3>What does Dastoor do?</h3>
+                <ul>
+                    <li class="fragment fade-down">Dynamically discovers: Channels, Safir nodes and
+                        Services
+                    </li>
+                    <li class="fragment fade-down">Monitors Channels, Safir nodes and Services
+                    </li>
+                    <li class="fragment fade-down">Deploys, Changes or removes services</li>
+                    <li class="fragment fade-down">Manages Services security</li>
+                    <li class="fragment fade-down">Sends Management command to nodes</li>
+                    <li class="fragment fade-down">Toggles Tracing mode dynamically on specific
+                        service
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2>Divaan (TODO)</h2>
+            <sub>Audit and Log Aggregator</sub>
+            <p style="font-size: large">Every node should connect to Divaan by PIRAN/DIVAAN(TODO)
+                protocol and
+                send Auditing
+                and service logs to it. Divaan hasn't separate dashboard, Dastoor show the
+                resulting information fetched from Divaan</p>
+            <img src="image/divaan.png">
+        </section>
+        <section>
+            <h1>The End</h1>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
+</html>

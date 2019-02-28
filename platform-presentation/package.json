@@ -1,0 +1,27 @@
+{
+  "name": "Piran-Platform-Presentation",
+  "version": "1.0.0",
+  "description": "Piran Platform Presentation",
+  "homepage": "http://github.com/piran-framework/",
+  "scripts": {
+    "test": "grunt test",
+    "start": "grunt serve",
+    "build": "grunt"
+  },
+  "author": {
+    "name": "Isa Hekmatizadeh",
+    "email": "esa.hekmat@gmail.com"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  },
+  "license": "MIT"
+}
