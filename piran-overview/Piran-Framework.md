@@ -10,7 +10,7 @@ Piran is a framework to simplify developing  large scale applications. It's base
 
 let's challenge the definitions. Abstract of most articles promoting micro-services is something like this:
 
-> In ancient world, applications was monolithic, All developers was working in a same code base, In that terror era development process had faced several problems and obstacles, it was hard to develop in a large team, it was hard to deploy, it was hard to scale. but suddenly micro-service idea came to rescue. It gave us the ability to build Google, Twitter, Netflix, Uber and several other devilish capitalist companies. 
+> In ancient world, applications were monolithic, All developers were working on a same code base, In that terror era development process had faced several problems and obstacles, it was hard to develop in a large team, it was hard to deploy, it was hard to scale. but suddenly micro-service idea came to rescue. It gave us the ability to build Google, Twitter, Netflix, Uber and several other devilish capitalist companies. 
 
 There are some intelligent persons who caution about the new problems which comes with micro-services. you should handle message translation, you should care about contracts between services, you should provide fall-backs. clear boundary between services are necessary. if you go async then you should handle timeouts yourself. handle a transaction in a distributed world is catastrophe. Some wise people like Martin Fowler says that if you think you should do micro-service, probably you're wrong.
 
