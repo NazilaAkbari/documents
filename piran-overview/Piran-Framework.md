@@ -19,7 +19,7 @@ Micro-service and monolithic, both has its benefits and its drawbacks. To unders
 
 Bad developers used to blame programming language, framework, tools, their boss, product team, politician, government (by the way, government is always delinquent) and all world around instead themselves. there is no difference for monolithic, after raise in micro-service popularity, who is  a better offender than monolithic. every software project need care, if you don't pay enough attention to clean code, unit and integration tests or you have a poor design in terms of modularity finally you end up with a sophisticated code, hard to maintain, hard to develop, full of bugs and full of performance issues software.
 
-Nevertheless, a single runtime application has its limitations. A single application could be scaled definitely, however If a single part of an application needs to scale with a different rate from rest of application, it cannot done without separating it and deploy it separately. imagine you have a e-shop website, and 80% of your backend calls belong to search system, but from the technical point of view, just 10% of you code and runtime objects make up search system, if you decide to scale up your application, you should deploy another instance which 90% of it is useless, because the previous instance easily can handle all but search calls which is 20% of all calls.
+Nevertheless, a single runtime application has its limitations. A single application could be scaled definitely, however If a single part of an application needs to scale with a different rate from rest of application, it cannot done without separating it and deploy it separately. imagine you have an e-shop website, and 80% of your backend calls belong to search system, but from the technical point of view, just 10% of you code and runtime objects make up search system, if you decide to scale up your application, you should deploy another instance which 90% of it is useless, because the previous instance easily can handle all but search calls which is 20% of all calls.
 
 propagating failure
 
@@ -31,7 +31,7 @@ slow packaging and deployment
 
 
 
-## Modularity is a old concept
+## Modularity is an old concept
 
 separated source files, packages, libraries.
 
